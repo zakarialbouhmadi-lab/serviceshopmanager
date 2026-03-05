@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.zakilb.servicemanager.ui.controllers.MainController"
+            stylesheets="@../css/application.css">
+    
+    <!-- Top: Menu Bar -->
+    <top>
+        <VBox>
+            <!-- Header -->
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header" style="-fx-background-color: #2c3e50; -fx-padding: 15px;">
+                <HBox fx:id="logoContainer" alignment="CENTER_LEFT"/>
+                <Text fx:id="appTitleText" styleClass="title" style="-fx-fill: white;"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Center: Tab Pane -->
+    <center>
+        <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <Tab fx:id="ordersTab" closable="false">
+                <!-- Will be populated with orders-view.fxml content -->
+            </Tab>
+            
+            <Tab fx:id="customersTab" closable="false">
+                <!-- Will be populated with customers-view.fxml content -->
+            </Tab>
+            
+            <Tab fx:id="serviceTypesTab" closable="false">
+                <!-- Will be populated with service-types-view.fxml content -->
+            </Tab>
+            
+            <Tab fx:id="backupsTab" closable="false">
+                <!-- Will be populated with backup-view.fxml content -->
+            </Tab>
+
+            <Tab fx:id="settingsTab" closable="false">
+                <!-- Will be populated with settings-view.fxml content -->
+            </Tab>
+            
+            <Tab fx:id="aboutTab" closable="false">
+                <!-- Will be populated with about-view.fxml content -->
+            </Tab>
+        </TabPane>
+    </center>
+    
+    <!-- Bottom: Status Bar -->
+    <bottom>
+        <HBox alignment="CENTER_LEFT" style="-fx-background-color: #ecf0f1; -fx-padding: 5px 10px;">
+            <Label fx:id="statusLabel"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="dbStatusLabel" style="-fx-text-fill: #27ae60;"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

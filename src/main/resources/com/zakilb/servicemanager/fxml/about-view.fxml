@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.zakilb.servicemanager.ui.controllers.AboutController"
+      alignment="CENTER"
+      spacing="30"
+      style="-fx-background-color: white; -fx-padding: 50px;">
+    
+    <VBox alignment="CENTER" spacing="10">
+        <Text fx:id="appNameText" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+        <Text fx:id="versionText" style="-fx-font-size: 14px; -fx-fill: gray;"/>
+    </VBox>
+    
+    <Separator prefWidth="400"/>
+    
+    <VBox alignment="CENTER" spacing="15">
+        <Text fx:id="developedByLabel" style="-fx-font-size: 16px; -fx-fill: gray;"/>
+        <Text fx:id="authorNameText" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-fill: #2c3e50;"/>
+    </VBox>
+    
+    <Separator prefWidth="400"/>
+    
+    <VBox alignment="CENTER" spacing="10">
+        <Text fx:id="descriptionLine1" style="-fx-font-size: 14px;"/>
+        <Text fx:id="descriptionLine2" style="-fx-font-size: 14px;"/>
+    </VBox>
+    
+    <VBox alignment="CENTER" spacing="8" style="-fx-padding: 20px;">
+        <Text fx:id="featuresLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        <Text fx:id="feature1"/>
+        <Text fx:id="feature2"/>
+        <Text fx:id="feature3"/>
+        <Text fx:id="feature4"/>
+        <Text fx:id="feature5"/>
+    </VBox>
+    
+    <Separator prefWidth="400"/>
+    
+    <Text fx:id="copyrightText" style="-fx-font-size: 12px; -fx-fill: gray;"/>
+    
+</VBox>

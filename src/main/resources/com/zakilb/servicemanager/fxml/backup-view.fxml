@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.zakilb.servicemanager.ui.controllers.BackupController"
+      spacing="15"
+      styleClass="backup-view">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <!-- Header Section -->
+    <HBox alignment="CENTER_LEFT" spacing="15">
+        <Label fx:id="headerLabel" styleClass="header-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="refreshButton" onAction="#handleRefresh" styleClass="secondary-button"/>
+        <Button fx:id="manualBackupButton" onAction="#handleManualBackup" styleClass="primary-button"/>
+    </HBox>
+    
+    <!-- Status Section -->
+    <VBox spacing="10" styleClass="info-section">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="lastBackupLabelTitle" styleClass="label-bold"/>
+            <Label fx:id="lastBackupLabel" text="-" styleClass="label-info"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="totalBackupsLabelTitle" styleClass="label-bold"/>
+            <Label fx:id="totalBackupsLabel" text="0" styleClass="label-info"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="totalSizeLabelTitle" styleClass="label-bold"/>
+            <Label fx:id="totalSizeLabel" text="0 MB" styleClass="label-info"/>
+        </HBox>
+    </VBox>
+    
+    <Separator/>
+    
+    <!-- Backup List Section -->
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <Label fx:id="backupHistoryLabel" styleClass="section-title"/>
+        
+        <TableView fx:id="backupTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="filenameColumn" prefWidth="300"/>
+                <TableColumn fx:id="methodColumn" prefWidth="100"/>
+                <TableColumn fx:id="dateColumn" prefWidth="180"/>
+                <TableColumn fx:id="sizeColumn" prefWidth="100"/>
+                <TableColumn fx:id="actionsColumn" prefWidth="150"/>
+            </columns>
+            <placeholder>
+                <Label fx:id="noBackupsLabel"/>
+            </placeholder>
+        </TableView>
+    </VBox>
+    
+    <!-- Action Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="restoreButton" onAction="#handleRestore" styleClass="warning-button" disable="true"/>
+        <Button fx:id="deleteButton" onAction="#handleDelete" styleClass="danger-button" disable="true"/>
+        <Button fx:id="openFolderButton" onAction="#handleOpenFolder" styleClass="secondary-button"/>
+    </HBox>
+    
+    <!-- Status Bar -->
+    <HBox alignment="CENTER_LEFT" spacing="10" styleClass="status-bar">
+        <Label fx:id="statusLabel"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <ProgressIndicator fx:id="progressIndicator" visible="false" prefWidth="20" prefHeight="20"/>
+    </HBox>
+    
+</VBox>

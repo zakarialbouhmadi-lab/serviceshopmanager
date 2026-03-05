@@ -1,0 +1,272 @@
+/* Main Application Stylesheet for Service Manager */
+
+/* Root styling */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f5f5f5;
+}
+
+/* General text styling */
+.label {
+    -fx-text-fill: #333333;
+}
+
+/* Headers */
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.subtitle {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+.header-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #2980b9;
+}
+
+.button:pressed {
+    -fx-background-color: #21618c;
+}
+
+.primary-button {
+    -fx-background-color: #27ae60;
+}
+
+.primary-button:hover {
+    -fx-background-color: #229954;
+}
+
+.secondary-button {
+    -fx-background-color: #95a5a6;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.danger-button {
+    -fx-background-color: #e74c3c;
+}
+
+.danger-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+.warning-button {
+    -fx-background-color: #f39c12;
+}
+
+.warning-button:hover {
+    -fx-background-color: #e67e22;
+}
+
+.small-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 3px;
+    -fx-font-size: 12px;
+}
+
+.small-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Text fields */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3px;
+    -fx-padding: 6px 10px;
+}
+
+.text-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* Text areas */
+.text-area {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3px;
+}
+
+.text-area:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+.text-area .content {
+    -fx-background-color: white;
+}
+
+/* Tables */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+}
+
+.table-view .column-header {
+    -fx-background-color: #ecf0f1;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell {
+    -fx-cell-size: 35px;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+/* Tab pane */
+.tab-pane {
+    -fx-background-color: white;
+}
+
+.tab {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 10px 20px;
+}
+
+.tab:selected {
+    -fx-background-color: white;
+    -fx-border-color: #3498db;
+    -fx-border-width: 0 0 3px 0;
+}
+
+/* Backup View Specific Styles */
+.backup-view {
+    -fx-background-color: white;
+}
+
+.info-section {
+    -fx-background-color: #ecf0f1;
+    -fx-padding: 15px;
+    -fx-background-radius: 5px;
+}
+
+.label-bold {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.label-info {
+    -fx-text-fill: #34495e;
+}
+
+.status-bar {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 8px;
+    -fx-border-color: #dee2e6;
+    -fx-border-width: 1px 0 0 0;
+}
+
+/* Settings View Specific Styles */
+.settings-view {
+    -fx-background-color: white;
+}
+
+.settings-scroll-pane {
+    -fx-background-color: white;
+}
+
+.settings-scroll-pane > .viewport {
+    -fx-background-color: white;
+}
+
+.settings-section {
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 15px;
+    -fx-background-radius: 5px;
+}
+
+.help-text {
+    -fx-text-fill: #6c757d;
+    -fx-font-size: 12px;
+}
+
+.warning-text {
+    -fx-text-fill: #e67e22;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Combo boxes */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3px;
+}
+
+.combo-box:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* Spinners */
+.spinner {
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3px;
+}
+
+.spinner:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2px;
+}
+
+/* Check boxes */
+.check-box {
+    -fx-text-fill: #333333;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #27ae60;
+}
+
+/* Separators */
+.separator {
+    -fx-background-color: #dee2e6;
+}
+
+/* Spacing */
+.spacing-small {
+    -fx-spacing: 5px;
+}
+
+.spacing-medium {
+    -fx-spacing: 10px;
+}
+
+.spacing-large {
+    -fx-spacing: 20px;
+}

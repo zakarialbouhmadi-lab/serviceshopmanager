@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.zakilb.servicemanager.ui.controllers.ChangeStatusDialogController"
+            prefWidth="550" prefHeight="550" style="-fx-background-color: white;">
+
+    <!-- Header -->
+    <top>
+        <VBox style="-fx-background-color: #34495e; -fx-padding: 20;">
+            <Label fx:id="headerLabel" style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label fx:id="orderInfoLabel" style="-fx-font-size: 12px; -fx-text-fill: #ecf0f1; -fx-padding: 5 0 0 0;"/>
+        </VBox>
+    </top>
+
+    <!-- Content -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: white;">
+            <VBox style="-fx-padding: 20;">
+                <Label fx:id="selectStatusLabel" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-padding: 0 0 15 0;"/>
+
+                <!-- Status Options as Cards -->
+                <VBox spacing="10" fx:id="statusContainer">
+                    <!-- Received -->
+                    <HBox fx:id="receivedBox" spacing="15" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #ecf0f1; -fx-background-radius: 8; -fx-padding: 15; -fx-cursor: hand;"
+                          onMouseClicked="#handleReceivedClick">
+                        <RadioButton fx:id="receivedRadio">
+                            <VBox.margin><Insets/></VBox.margin>
+                        </RadioButton>
+                        <Label text="📥" style="-fx-font-size: 24px; -fx-min-width: 40; -fx-alignment: center;"/>
+                        <VBox spacing="2" HBox.hgrow="ALWAYS">
+                            <Label fx:id="receivedLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                            <Label fx:id="receivedDescLabel"
+                                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- In Progress -->
+                    <HBox fx:id="inProgressBox" spacing="15" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #ecf0f1; -fx-background-radius: 8; -fx-padding: 15; -fx-cursor: hand;"
+                          onMouseClicked="#handleInProgressClick">
+                        <RadioButton fx:id="inProgressRadio"/>
+                        <Label text="🔧" style="-fx-font-size: 24px; -fx-min-width: 40; -fx-alignment: center;"/>
+                        <VBox spacing="2" HBox.hgrow="ALWAYS">
+                            <Label fx:id="inProgressLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                            <Label fx:id="inProgressDescLabel"
+                                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Ready -->
+                    <HBox fx:id="readyBox" spacing="15" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #ecf0f1; -fx-background-radius: 8; -fx-padding: 15; -fx-cursor: hand;"
+                          onMouseClicked="#handleReadyClick">
+                        <RadioButton fx:id="readyRadio"/>
+                        <Label text="✅" style="-fx-font-size: 24px; -fx-min-width: 40; -fx-alignment: center;"/>
+                        <VBox spacing="2" HBox.hgrow="ALWAYS">
+                            <Label fx:id="readyLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                            <Label fx:id="readyDescLabel"
+                                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Picked Up -->
+                    <HBox fx:id="pickedUpBox" spacing="15" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #ecf0f1; -fx-background-radius: 8; -fx-padding: 15; -fx-cursor: hand;"
+                          onMouseClicked="#handlePickedUpClick">
+                        <RadioButton fx:id="pickedUpRadio"/>
+                        <Label text="📤" style="-fx-font-size: 24px; -fx-min-width: 40; -fx-alignment: center;"/>
+                        <VBox spacing="2" HBox.hgrow="ALWAYS">
+                            <Label fx:id="pickedUpLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                            <Label fx:id="pickedUpDescLabel"
+                                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                        </VBox>
+                    </HBox>
+
+                    <!-- Canceled -->
+                    <HBox fx:id="canceledBox" spacing="15" alignment="CENTER_LEFT"
+                          style="-fx-background-color: #ecf0f1; -fx-background-radius: 8; -fx-padding: 15; -fx-cursor: hand;"
+                          onMouseClicked="#handleCanceledClick">
+                        <RadioButton fx:id="canceledRadio"/>
+                        <Label text="❌" style="-fx-font-size: 24px; -fx-min-width: 40; -fx-alignment: center;"/>
+                        <VBox spacing="2" HBox.hgrow="ALWAYS">
+                            <Label fx:id="canceledLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                            <Label fx:id="canceledDescLabel"
+                                   style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d; -fx-wrap-text: true;"/>
+                        </VBox>
+                    </HBox>
+                </VBox>
+
+                <!-- Notes Section -->
+                <VBox spacing="8" style="-fx-padding: 20 0 0 0;">
+                    <Label fx:id="addNoteLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <Label fx:id="addNoteHelpLabel"
+                           wrapText="true" style="-fx-font-size: 11px; -fx-text-fill: #7f8c8d;"/>
+                    <TextArea fx:id="notesTextArea" wrapText="true" prefRowCount="3"
+                              style="-fx-background-color: white; -fx-border-color: #dee2e6; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+                </VBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- Footer Buttons -->
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 15; -fx-background-color: #f8f9fa; -fx-border-color: #dee2e6; -fx-border-width: 1 0 0 0;">
+            <Button fx:id="cancelButton" onAction="#handleCancel" prefWidth="100" prefHeight="35"
+                    style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 13px; -fx-background-radius: 5;"/>
+            <Button fx:id="updateButton" onAction="#handleUpdate" defaultButton="true"
+                    prefWidth="130" prefHeight="35"
+                    style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 5;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

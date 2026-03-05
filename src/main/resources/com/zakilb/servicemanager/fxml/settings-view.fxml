@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+
+<ScrollPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.zakilb.servicemanager.ui.controllers.SettingsController"
+            fitToWidth="true"
+            styleClass="settings-scroll-pane">
+    
+    <VBox spacing="20" styleClass="settings-view">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+        
+        <!-- Header -->
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Label fx:id="headerLabel" styleClass="header-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="saveButton" onAction="#handleSave" styleClass="primary-button"/>
+            <Button fx:id="cancelButton" onAction="#handleCancel" styleClass="secondary-button"/>
+        </HBox>
+        
+        <Separator/>
+        
+        <!-- Shop Information Section -->
+        <VBox spacing="15" styleClass="settings-section">
+            <Label fx:id="shopInfoTitle" styleClass="section-title"/>
+            
+            <VBox spacing="8">
+                <Label fx:id="logoLabel"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ImageView fx:id="logoPreview" fitWidth="200" fitHeight="58" preserveRatio="true" styleClass="logo-preview"/>
+                    <VBox spacing="5">
+                        <Button fx:id="uploadLogoButton" onAction="#handleUploadLogo" styleClass="primary-button"/>
+                        <Button fx:id="removeLogoButton" onAction="#handleRemoveLogo" styleClass="danger-button" visible="false" managed="false"/>
+                    </VBox>
+                </HBox>
+                <Label fx:id="logoHelpLabel" styleClass="help-text"/>
+            </VBox>
+            
+            <VBox spacing="8">
+                <Label fx:id="shopNameLabel"/>
+                <TextField fx:id="shopNameField" maxWidth="400"/>
+            </VBox>
+            
+            <VBox spacing="8">
+                <Label fx:id="shopAddressLabel"/>
+                <TextArea fx:id="shopAddressField" maxWidth="400" prefRowCount="3"/>
+            </VBox>
+            
+            <VBox spacing="8">
+                <Label fx:id="shopPhoneLabel"/>
+                <TextField fx:id="shopPhoneField" maxWidth="400"/>
+            </VBox>
+            
+            <VBox spacing="8">
+                <Label fx:id="shopEmailLabel"/>
+                <TextField fx:id="shopEmailField" maxWidth="400"/>
+            </VBox>
+        </VBox>
+        
+        <Separator/>
+        
+        <!-- Language Settings Section -->
+        <VBox spacing="15" styleClass="settings-section">
+            <Label fx:id="languageTitle" styleClass="section-title"/>
+
+            <VBox spacing="8">
+                <Label fx:id="languageSelectLabel"/>
+                <ComboBox fx:id="languageComboBox" prefWidth="200" onAction="#handleLanguageChange"/>
+                <Label fx:id="languageRestartLabel" styleClass="help-text"/>
+            </VBox>
+        </VBox>
+
+        <Separator/>
+
+        <!-- Printing Settings Section -->
+        <VBox spacing="15" styleClass="settings-section">
+            <Label fx:id="printingTitle" styleClass="section-title"/>
+            
+            <!-- A4/PDF Printer -->
+            <VBox spacing="8">
+                <Label fx:id="a4PrinterLabel"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="a4PrinterComboBox" prefWidth="300"/>
+                    <Button fx:id="refreshPrintersButton" onAction="#handleRefreshPrinters" styleClass="secondary-button"/>
+                </HBox>
+                <Label fx:id="a4PrinterHelpLabel" styleClass="help-text"/>
+            </VBox>
+
+            <!-- PDF Copies -->
+            <VBox spacing="8">
+                <Label fx:id="pdfCopiesLabel"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Spinner fx:id="pdfCopiesSpinner" prefWidth="100"/>
+                </HBox>
+                <Label fx:id="pdfCopiesHelpLabel" styleClass="help-text"/>
+            </VBox>
+            
+            <!-- Label Printer -->
+            <VBox spacing="8">
+                <Label fx:id="labelPrinterLabel"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="labelPrinterComboBox" prefWidth="300"/>
+                </HBox>
+                <Label fx:id="labelPrinterHelpLabel" styleClass="help-text"/>
+            </VBox>
+            
+            <!-- Label Size -->
+            <VBox spacing="8">
+                <Label fx:id="stickerSizeLabel"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="stickerSizeComboBox" prefWidth="200"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Custom Label Size -->
+            <VBox fx:id="customSizeBox" spacing="8" visible="false" managed="false">
+                <Label fx:id="customSizeLabel"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label fx:id="widthLabel"/>
+                    <TextField fx:id="customWidthField" prefWidth="80"/>
+                    <Label text="mm"/>
+                    <Region prefWidth="20"/>
+                    <Label fx:id="heightLabel"/>
+                    <TextField fx:id="customHeightField" prefWidth="80"/>
+                    <Label text="mm"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Printer DPI Setting -->
+            <VBox spacing="8">
+                <Label fx:id="printerDpiLabel"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ComboBox fx:id="printerDpiComboBox" prefWidth="200"/>
+                </HBox>
+                <Label fx:id="printerDpiHelpLabel" styleClass="help-text"/>
+            </VBox>
+
+            <!-- ZPL Option -->
+            <VBox spacing="8">
+                <CheckBox fx:id="useZPLPrintingCheckBox" selected="false"/>
+                <Label fx:id="zplHelpLabel" styleClass="help-text"/>
+            </VBox>
+        </VBox>
+        
+        <!-- Status Bar -->
+        <HBox alignment="CENTER_LEFT" spacing="10" styleClass="status-bar">
+            <Label fx:id="statusLabel"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lastSavedLabel" styleClass="help-text"/>
+        </HBox>
+        
+    </VBox>
+</ScrollPane>

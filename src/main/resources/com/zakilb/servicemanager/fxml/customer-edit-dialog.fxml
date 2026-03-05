@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.zakilb.servicemanager.ui.controllers.CustomerEditDialogController"
+      spacing="15" style="-fx-padding: 20;" prefWidth="500">
+    
+    <!-- Form fields -->
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" minWidth="100" prefWidth="100"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+        
+        <!-- Name -->
+        <Label fx:id="nameLabel" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        
+        <!-- Phone -->
+        <Label fx:id="phoneLabel" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        
+        <!-- Email -->
+        <Label fx:id="emailLabel" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        
+        <!-- Notes -->
+        <Label fx:id="notesLabel" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.valignment="TOP">
+            <padding>
+                <Insets top="5"/>
+            </padding>
+        </Label>
+        <TextArea fx:id="notesArea" prefRowCount="4" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+    
+    <!-- Required field note -->
+    <Label fx:id="requiredFieldsLabel" style="-fx-font-size: 10px; -fx-text-fill: #7f8c8d;"/>
+    
+    <!-- Error label -->
+    <Label fx:id="errorLabel" style="-fx-text-fill: #e74c3c;" wrapText="true" managed="false" visible="false"/>
+    
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Button fx:id="saveButton" onAction="#handleSave" defaultButton="true"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white;" prefWidth="100"/>
+        <Button fx:id="cancelButton" onAction="#handleCancel" cancelButton="true" prefWidth="100"/>
+    </HBox>
+    
+</VBox>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.zakilb.servicemanager.ui.controllers.NewOrderDialogController"
+      spacing="15" style="-fx-padding: 20;" prefWidth="700" prefHeight="600">
+    
+    <!-- Header -->
+    <Label fx:id="headerLabel" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+    
+    <!-- Customer Selection -->
+    <VBox spacing="5">
+        <Label fx:id="customerLabel" style="-fx-font-weight: bold;"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <ComboBox fx:id="customerComboBox" editable="true" prefWidth="400"/>
+            <Button fx:id="newCustomerButton" onAction="#handleNewCustomer"/>
+        </HBox>
+    </VBox>
+    
+    <!-- Due Date -->
+    <VBox spacing="5">
+        <Label fx:id="dueDateLabel" style="-fx-font-weight: bold;"/>
+        <DatePicker fx:id="dueDatePicker" prefWidth="200"/>
+    </VBox>
+    
+    <!-- Order Notes -->
+    <VBox spacing="5">
+        <Label fx:id="notesLabel" style="-fx-font-weight: bold;"/>
+        <TextArea fx:id="notesArea" prefRowCount="2" wrapText="true"/>
+    </VBox>
+    
+    <!-- Amount Paid -->
+    <VBox spacing="5">
+        <Label fx:id="amountPaidLabel" style="-fx-font-weight: bold;"/>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <TextField fx:id="amountPaidField" prefWidth="150"/>
+            <Label text="PLN" style="-fx-font-size: 12px;"/>
+            <Label fx:id="amountPaidHelpLabel" style="-fx-font-size: 10px; -fx-text-fill: #7f8c8d;"/>
+        </HBox>
+    </VBox>
+
+    <!-- Items Section -->
+    <VBox spacing="10" VBox.vgrow="ALWAYS">
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="itemsLabel" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="addItemButton" onAction="#handleAddItem" 
+                    style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        </HBox>
+        
+        <!-- Items Table -->
+        <TableView fx:id="itemsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="itemNumberColumn" prefWidth="35" editable="false"/>
+                <TableColumn fx:id="serviceTypeColumn" prefWidth="150" editable="false"/>
+                <TableColumn fx:id="itemNameColumn" prefWidth="120" editable="false"/>
+                <TableColumn fx:id="priceColumn" prefWidth="70" editable="false"/>
+                <TableColumn fx:id="discountColumn" prefWidth="60" editable="false"/>
+                <TableColumn fx:id="finalPriceColumn" prefWidth="80" editable="false"/>
+                <TableColumn fx:id="itemNotesColumn" prefWidth="100" editable="false"/>
+                <TableColumn fx:id="actionsColumn" prefWidth="65" editable="false"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+
+        <!-- Total -->
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 5;">
+            <Label fx:id="totalLabelTitle" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            <Label fx:id="totalLabel" style="-fx-font-size: 14px;"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 0 5 5 5;">
+            <Label fx:id="savingsLabel" style="-fx-font-size: 12px; -fx-text-fill: #27ae60;" managed="false" visible="false"/>
+        </HBox>
+    </VBox>
+    
+    <!-- Required field note -->
+    <Label fx:id="requiredFieldsLabel" style="-fx-font-size: 10px; -fx-text-fill: #7f8c8d;"/>
+    
+    <!-- Error label -->
+    <Label fx:id="errorLabel" style="-fx-text-fill: #e74c3c;" wrapText="true" managed="false" visible="false"/>
+    
+    <!-- Buttons -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="createButton" onAction="#handleCreate" defaultButton="true"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold;" prefWidth="150"/>
+        <Button fx:id="cancelButton" onAction="#handleCancel" cancelButton="true" prefWidth="100"/>
+    </HBox>
+    
+</VBox>

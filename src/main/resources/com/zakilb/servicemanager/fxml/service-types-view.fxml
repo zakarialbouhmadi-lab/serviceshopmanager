@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.zakilb.servicemanager.ui.controllers.ServiceTypesController"
+      spacing="10" style="-fx-padding: 15;">
+    
+    <!-- Top: Actions -->
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label fx:id="titleLabel" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="searchField" promptText="Search..." prefWidth="250"/>
+        <Button fx:id="searchButton" text="Search" onAction="#handleSearch"/>
+        <Button fx:id="addButton" onAction="#handleAdd"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white;"/>
+        <Button fx:id="editButton" onAction="#handleEdit" disable="true"/>
+        <Button fx:id="deleteButton" onAction="#handleDelete" disable="true"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white;"/>
+        <Button fx:id="refreshButton" onAction="#handleRefresh"/>
+    </HBox>
+    
+    <!-- Center: Table -->
+    <TableView fx:id="serviceTypesTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="50" editable="false"/>
+            <TableColumn fx:id="codeColumn" prefWidth="100" editable="false"/>
+            <TableColumn fx:id="nameColumn" prefWidth="250" editable="false"/>
+            <TableColumn fx:id="priceColumn" prefWidth="120" editable="false"/>
+            <TableColumn fx:id="descriptionColumn" prefWidth="300" editable="false"/>
+            <TableColumn fx:id="createdColumn" prefWidth="150" editable="false"/>
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+    
+    <!-- Bottom: Status bar -->
+    <HBox spacing="10" alignment="CENTER_LEFT" style="-fx-padding: 5;">
+        <Label fx:id="statusLabel"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label fx:id="countLabel"/>
+    </HBox>
+    
+</VBox>
