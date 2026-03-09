@@ -32,9 +32,6 @@ It handles the complete lifecycle of a service order: from customer registration
 
 ---
 
-## 📸 Screenshots
-
-> **Note:** Add your screenshots to a `docs/images` folder and update these paths.
 
 ### Main Dashboard (Orders View)
 
@@ -62,6 +59,22 @@ It handles the complete lifecycle of a service order: from customer registration
 *Configuring shop details, logos, and specific hardware printers.*
 
 ---
+
+### 📸 Application Gallery
+
+<img width="1920" height="1080" alt="Screenshot_20260309_234231" src="https://github.com/user-attachments/assets/9e43681d-f4ce-4311-845d-3d9dbb456093" />
+<img width="751" height="689" alt="Screenshot_20260309_234406" src="https://github.com/user-attachments/assets/df97c37e-bf79-43d5-991b-48b2db8e2ef2" />
+<img width="751" height="689" alt="Screenshot_20260309_234424" src="https://github.com/user-attachments/assets/115f77c7-caa8-4cb5-91b3-5f78320fcd31" />
+<img width="615" height="535" alt="Screenshot_20260309_234639" src="https://github.com/user-attachments/assets/092fef39-9186-4409-a136-3913c7357588" />
+<img width="615" height="625" alt="Screenshot_20260309_234717" src="https://github.com/user-attachments/assets/11883243-dfdd-4940-abf0-961e746bcc18" />
+<img width="725" height="638" alt="Screenshot_20260309_234813" src="https://github.com/user-attachments/assets/eb7723cb-fd00-4059-8081-c1494bbf7817" />
+<img width="775" height="674" alt="Screenshot_20260309_234841" src="https://github.com/user-attachments/assets/4a97eb64-e189-4bf3-ab20-879dd52ee629" />
+<img width="1917" height="1053" alt="Screenshot_20260309_234918" src="https://github.com/user-attachments/assets/e9a4ef06-b4e6-418c-a60e-765cb1aa5ab0" />
+<img width="1917" height="1053" alt="Screenshot_20260309_234948" src="https://github.com/user-attachments/assets/dbdc261a-6a68-4ec0-af8d-4dd314505746" />
+<img width="1917" height="1053" alt="Screenshot_20260309_235006" src="https://github.com/user-attachments/assets/5bd780d8-e7d0-4719-b888-95992554b50a" />
+<img width="1917" height="1053" alt="Screenshot_20260309_235015" src="https://github.com/user-attachments/assets/e962e55b-3331-4725-a346-5cead55ab61c" />
+<img width="1917" height="1053" alt="Screenshot_20260309_235025" src="https://github.com/user-attachments/assets/5c925a78-89aa-4379-8dba-12b6a0deba80" />
+
 
 ## 🏗️ Architecture & Tech Stack
 
